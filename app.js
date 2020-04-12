@@ -3,7 +3,7 @@ const mole = document.querySelectorAll('.mole');
 const timeLeft = document.querySelector('#time-left');
 let score = document.querySelector('#score');
 
-const totalTime = 5;
+const totalTime = 30;
 let result = 0;
 let currentTime = totalTime;
 let moveMoleTimer = null;
