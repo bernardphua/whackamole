@@ -8,6 +8,7 @@ let result = 0;
 let currentTime = totalTime;
 let moveMoleTimer = null;
 let countDownTimer = null;
+let hitPosition = null;
 
 timeLeft.textContent = totalTime;
 
@@ -21,38 +22,40 @@ function randomSquare() {
     hitPosition = randomPosition.id;
 }
 
-square.forEach(elem=>{
-    elem.addEventListener('mouseup', () =>{
-        if (elem.id === hitPosition){
+square.forEach(elem => {
+    elem.addEventListener('click', () => {
+        if (hitPosition != null && elem.id === hitPosition) {
             result += 1;
             score.textContent = result;
         }
     })
 })
 
-function moveMole(){
+function moveMole() {
     moveMoleTimer = setInterval(randomSquare, 1000);
 }
 
-function countDown(){
+function countDown() {
     currentTime--;
     timeLeft.textContent = currentTime.toString();
 
-    if (currentTime === 0){
+    if (currentTime === 0) {
         clearInterval(countDownTimer);
         clearInterval(moveMoleTimer);
-        setTimeout(()=>{alert('GAME OVER! Your final score is ' + result)},100);
+        setTimeout(() => { alert('GAME OVER! Your final score is ' + result) }, 100);
     }
 }
 
-function StartGame(){
-    if (currentTime === totalTime){
+function StartGame() {
+    if (currentTime === totalTime) {
         countDownTimer = setInterval(countDown, 1000);
         moveMole();
     }
 }
 
-function ResetGame(){
+function ResetGame() {
+    clearInterval(countDownTimer);
+    clearInterval(moveMoleTimer);
     result = 0;
     currentTime = totalTime;
     timeLeft.textContent = totalTime;
