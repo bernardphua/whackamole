@@ -1,0 +1,40 @@
+.square{
+    width: 150px;
+    height: 150px;
+    border-style: solid;
+    border-color: black;
+}
+
+.grid{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center; 
+    width: 480px;
+    height: 480px;
+}
+
+.game-panel{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-content: stretch;
+    /* width: 618px; */
+}
+
+.mole {
+    background-image: url('mole.png');
+    background-size: cover;
+}
+
+.col{
+    width: 300px;
+}
+
+h1{
+    margin: 1px auto 1px
+}
+
+h2{
+    margin: 0.8rem auto 8px
+}
