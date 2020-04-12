@@ -25,6 +25,11 @@
 .mole {
     background-image: url('mole.png');
     background-size: cover;
+
+}
+.mole-hit {
+    background-image: url('mole-hit.png');
+    background-size: cover;
 }
 
 .col{

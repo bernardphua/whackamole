@@ -15,6 +15,7 @@ timeLeft.textContent = totalTime;
 function randomSquare() {
     square.forEach(className => {
         className.classList.remove('mole');
+        className.classList.remove('mole-hit');
     });
 
     let randomPosition = square[Math.floor(Math.random() * 9)];
@@ -25,6 +26,7 @@ function randomSquare() {
 square.forEach(elem => {
     elem.addEventListener('click', () => {
         if (hitPosition != null && elem.id === hitPosition) {
+            elem.classList.replace('mole','mole-hit');
             result += 1;
             score.textContent = result;
         }
