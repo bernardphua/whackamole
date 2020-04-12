@@ -41,7 +41,7 @@ function countDown(){
     if (currentTime === 0){
         clearInterval(countDownTimer);
         clearInterval(moveMoleTimer);
-        alert('GAME OVER! Your final score is ' + result);
+        setTimeout(()=>{alert('GAME OVER! Your final score is ' + result)},100);
     }
 }
 
